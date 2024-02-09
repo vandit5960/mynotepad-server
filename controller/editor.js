@@ -54,20 +54,6 @@ const setPassword = async (req, res) => {
 };
 
 const setUsername = async (req, res) => {
-  try {
-    const { name, username } = req.body;
-
-    const updatedData = await Editor.findOneAndUpdate(
-      { name: name },
-      { name: username },
-      { new: true }
-    );
-
-    return res.status(200).json({ updatedData });
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ error: "Internal Server Error" });
-  }
 };
 
 module.exports = { getData, putData, setPassword,setUsername };
